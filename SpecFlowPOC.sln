@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApi", "ToDoApi\ToDoApi.csproj", "{1BD4699D-7CB0-49CA-9AE1-4AE7C98247B4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApi.Integration", "ToDoApi.Integration\ToDoApi.Integration.csproj", "{30BA4698-034B-4ABC-98F6-448A9D1C7D69}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{44457162-723E-4441-9A2F-885A6A51AD43}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1BD4699D-7CB0-49CA-9AE1-4AE7C98247B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BD4699D-7CB0-49CA-9AE1-4AE7C98247B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BD4699D-7CB0-49CA-9AE1-4AE7C98247B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BD4699D-7CB0-49CA-9AE1-4AE7C98247B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30BA4698-034B-4ABC-98F6-448A9D1C7D69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30BA4698-034B-4ABC-98F6-448A9D1C7D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30BA4698-034B-4ABC-98F6-448A9D1C7D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30BA4698-034B-4ABC-98F6-448A9D1C7D69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66F0E429-7DE2-4385-BA6D-7EED94526679}
+	EndGlobalSection
+EndGlobal
