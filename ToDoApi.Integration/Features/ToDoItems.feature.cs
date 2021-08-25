@@ -19,9 +19,9 @@ namespace ToDoApi.Integration.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("ToDo Items", Description="\tThis feature is the main feature of this API. It will need to be able\r\n\tto prope" +
-        "rly retrieve, create, update, and delete todo items.", SourceFile="Features\\ToDoItems.feature", SourceLine=0)]
-    public partial class ToDoItemsFeature
+    [TechTalk.SpecRun.FeatureAttribute("Query Todo Items", Description="\tThis feature is describes the various ways that todo items\r\n    can be requested" +
+        " from the API.", SourceFile="Features\\ToDoItems.feature", SourceLine=0)]
+    public partial class QueryTodoItemsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -35,8 +35,8 @@ namespace ToDoApi.Integration.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "ToDo Items", "\tThis feature is the main feature of this API. It will need to be able\r\n\tto prope" +
-                    "rly retrieve, create, update, and delete todo items.", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Query Todo Items", "\tThis feature is describes the various ways that todo items\r\n    can be requested" +
+                    " from the API.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -72,15 +72,13 @@ namespace ToDoApi.Integration.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("API can retrieve all incomplete todo items", new string[] {
-                "SeedData"}, SourceLine=5)]
+        [TechTalk.SpecRun.ScenarioAttribute("API can retrieve all incomplete todo items", SourceLine=4)]
         public virtual void APICanRetrieveAllIncompleteTodoItems()
         {
-            string[] tagsOfScenario = new string[] {
-                    "SeedData"};
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("API can retrieve all incomplete todo items", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 6
+#line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -100,14 +98,151 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+#line 6
+ testRunner.Given("that I want to request all incomplete todo items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
 #line 7
- testRunner.Given("that I request all incomplete todo items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.When("I make the request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
  testRunner.Then("I should receive only the incomplete todo items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("API can retrieve all todo items", SourceLine=9)]
+        public virtual void APICanRetrieveAllTodoItems()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("API can retrieve all todo items", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 10
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 11
+    testRunner.Given("that I want to request all todo items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 12
+    testRunner.When("I make the request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 13
+    testRunner.Then("I should receive all todo items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        public virtual void APICanRetrieveTodoItemsBasedOnTags(string incomplete, string tag, string count, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("incomplete", incomplete);
+            argumentsOfScenario.Add("tag", tag);
+            argumentsOfScenario.Add("count", count);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("API can retrieve todo items based on tags", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 15
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 16
+    testRunner.Given(string.Format("that I want to request todo items with incomplete = {0}", incomplete), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 17
+    testRunner.And(string.Format("I want those todo items with the tag {0}", tag), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 18
+    testRunner.When("I make the request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 19
+    testRunner.Then(string.Format("I should have {0} todo items", count), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 20
+    testRunner.And(string.Format("they should all have the {0} tag", tag), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("API can retrieve todo items based on tags, Variant 0", SourceLine=23)]
+        public virtual void APICanRetrieveTodoItemsBasedOnTags_Variant0()
+        {
+#line 15
+this.APICanRetrieveTodoItemsBasedOnTags("false", "Chore", "3", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("API can retrieve todo items based on tags, Variant 1", SourceLine=23)]
+        public virtual void APICanRetrieveTodoItemsBasedOnTags_Variant1()
+        {
+#line 15
+this.APICanRetrieveTodoItemsBasedOnTags("true", "Chore", "4", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("API can retrieve todo items based on tags, Variant 2", SourceLine=23)]
+        public virtual void APICanRetrieveTodoItemsBasedOnTags_Variant2()
+        {
+#line 15
+this.APICanRetrieveTodoItemsBasedOnTags("false", "Auto", "1", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("API can retrieve todo items based on tags, Variant 3", SourceLine=23)]
+        public virtual void APICanRetrieveTodoItemsBasedOnTags_Variant3()
+        {
+#line 15
+this.APICanRetrieveTodoItemsBasedOnTags("true", "Auto", "2", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("API can retrieve todo items based on tags, Variant 4", SourceLine=23)]
+        public virtual void APICanRetrieveTodoItemsBasedOnTags_Variant4()
+        {
+#line 15
+this.APICanRetrieveTodoItemsBasedOnTags("false", "Work", "2", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("API can retrieve todo items based on tags, Variant 5", SourceLine=23)]
+        public virtual void APICanRetrieveTodoItemsBasedOnTags_Variant5()
+        {
+#line 15
+this.APICanRetrieveTodoItemsBasedOnTags("true", "Work", "3", ((string[])(null)));
+#line hidden
         }
     }
 }

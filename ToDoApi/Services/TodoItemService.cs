@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -32,8 +32,8 @@ namespace ToDoApi.Services
 
             return await _dbContext.TodoItems
                 .Include(x => x.Tags)
-                .Where(t => tags.Contains(t.Tags.Select(t1 => t1.Title).First()))
                 .Where(x => includeCompleted || !x.Completed)
+                .Where(x => x.Tags.Any(t => tags.Contains(t.Title)))
                 .ToListAsync();
         }
 
