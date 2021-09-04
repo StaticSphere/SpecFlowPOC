@@ -1,17 +1,17 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace ToDoApi.ViewModels
 {
-    public record TodoItemViewModel
+    public class TodoItemViewModel
     {
-        public int? Id { get; init; }
-        public string Title { get; init; } = "";
-        public string? Description { get; init; }
-        public bool Completed { get; init; }
-        public DateTime? DueDate { get; init; }
-        public DateTime ModifiedOn { get; init; }
+        public int? Id { get; set; }
+        public string Title { get; set; } = "";
+        public string? Description { get; set; }
+        public bool Completed { get; set; }
+        public DateTime? DueDate { get; set; }
+        public DateTime ModifiedOn { get; set; }
 
-        public IEnumerable<TodoTagViewModel> Tags { get; init; } = new List<TodoTagViewModel>();
+        public IEnumerable<TodoTagViewModel> Tags { get; set; } = new List<TodoTagViewModel>();
     }
 }

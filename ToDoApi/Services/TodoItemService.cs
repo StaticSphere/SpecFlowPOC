@@ -54,7 +54,7 @@ namespace ToDoApi.Services
 
         public async Task<int> UpdateTodoItemAsync(TodoItem item)
         {
-            _dbContext.TodoItems.Attach(item);
+            _dbContext.TodoItems.Attach(item).State = EntityState.Modified;
             await _dbContext.SaveChangesAsync();
 
             return item.Id!.Value;

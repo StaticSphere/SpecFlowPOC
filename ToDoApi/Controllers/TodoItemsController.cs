@@ -46,7 +46,7 @@ namespace ToDoApi.Controllers
             if (todoItem == null)
                 return NotFound();
 
-            return Ok(todoItem);
+            return Ok(_mapper.Map<TodoItemViewModel>(todoItem));
         }
 
         [HttpPost]

@@ -1,9 +1,9 @@
-﻿namespace ToDoApi.ViewModels
+namespace ToDoApi.ViewModels
 {
-    public record TodoTagViewModel
+    public class TodoTagViewModel
     {
-        public int? Id { get; init; }
-        public string Title { get; init; } = "";
-        public string? Color { get; init; }
+        public int? Id { get; set; }
+        public string Title { get; set; } = "";
+        public string? Color { get; set; }
     }
 }

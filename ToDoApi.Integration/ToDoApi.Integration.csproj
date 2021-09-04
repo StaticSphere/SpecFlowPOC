@@ -1,7 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,7 +13,7 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
     <PackageReference Include="Npgsql" Version="5.0.7" />
     <PackageReference Include="RestSharp" Version="106.12.0" />
-    <PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.42" />
+    <PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.50" />
 
     
     <PackageReference Include="SpecRun.SpecFlow" Version="3.9.7" />
@@ -23,10 +24,22 @@
     <Folder Include="Drivers\" />
     <Folder Include="Hooks\" />
     <EmbeddedResource Include="Resources\**" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Resources\ResetForTodoItemTests.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\ToDoApi\ViewModels\TodoItemViewModel.cs" Link="ViewModels\TodoItemViewModel.cs" />
+    <Compile Include="..\ToDoApi\ViewModels\TodoTagViewModel.cs" Link="ViewModels\TodoTagViewModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Features\ToDoItems.Query.feature.cs">
+      <DependentUpon>ToDoItems.Query.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
