@@ -1,4 +1,4 @@
-#SpecFlow+LivingDoc Proof of Concept
+# SpecFlow+LivingDoc Proof of Concept
 
 This proof of concept demonstrates the usage of both the SpecFlow testing library, as
 well as the LivingDoc addition that can be used to generate reports from the test results
